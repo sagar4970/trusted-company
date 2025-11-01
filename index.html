@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Trusted Company - Premium clothing for Men, Women & Children. Elegant, responsive e-commerce template." />
+  <title>Trusted Company — Clothing for Men, Women & Children</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#111111;
+      --muted:#6b6b6b;
+      --accent:#b88746; /* gold */
+      --accent-dark:#8a6239;
+      --card:#f8f8f8;
+      --radius:14px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);line-height:1.45}
+    header{position:sticky;top:0;background:rgba(255,255,255,0.95);backdrop-filter:saturate(120%) blur(4px);border-bottom:1px solid #eee;z-index:80}
+    .container{max-width:1200px;margin:0 auto;padding:0 20px}
+
+    /* Navbar */
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--text),var(--accent));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    nav a{color:var(--text);text-decoration:none;font-weight:600}
+    .cta{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;box-shadow:0 6px 18px rgba(138,98,57,0.12)}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:48px 0}
+    .hero-left h1{font-size:44px;margin:0 0 12px}
+    .hero-left p{color:var(--muted);margin:0 0 20px}
+    .hero-actions{display:flex;gap:12px}
+    .search{display:flex;gap:8px;background:#fff;border:1px solid #eee;padding:6px;border-radius:10px;align-items:center}
+    .search input{border:0;outline:none;padding:8px;width:220px}
+    .hero-right{border-radius:18px;overflow:hidden;background:linear-gradient(180deg,#f6f1e9, #fff);box-shadow:0 10px 30px rgba(0,0,0,0.06)}
+    .hero-img{width:100%;height:100%;display:block}
+
+    /* Sections */
+    section{padding:40px 0}
+    .section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+    .section-head h2{margin:0}
+
+    /* Catalogs */
+    .catalog-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .card{background:var(--card);border-radius:12px;padding:12px;overflow:hidden;transition:transform .28s ease,box-shadow .28s ease}
+    .card img{width:100%;height:200px;object-fit:cover;border-radius:10px}
+    .card h3{margin:10px 0 6px;font-size:16px}
+    .price{font-weight:700;color:var(--accent-dark)}
+    .card .shop{display:inline-block;margin-top:8px;padding:8px 12px;border-radius:10px;text-decoration:none;font-weight:700}
+    .card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(17,17,17,0.08)}
+
+    /* Footer */
+    footer{background:#0f0f0f;color:#fff;padding:36px 0;margin-top:28px;border-top-left-radius:20px;border-top-right-radius:20px}
+    .footer-grid{display:grid;grid-template-columns:1fr 240px;gap:20px}
+    .footer-address p{margin:6px 0;color:#ddd}
+    .socials{display:flex;gap:10px;margin-top:8px}
+    .socials a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:8px;background:rgba(255,255,255,0.06);color:#fff;text-decoration:none}
+    .copyright{margin-top:20px;color:#bbb;text-align:center}
+
+    /* Contact form */
+    .contact-card{background:#fff;padding:18px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,0.06)}
+    .contact-card label{display:block;font-weight:600;margin:8px 0 6px}
+    .contact-card input,.contact-card textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e6e6}
+    .contact-card button{margin-top:10px;background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;border:0;font-weight:700}
+
+    /* Responsive */
+    @media (max-width:1000px){
+      .catalog-grid{grid-template-columns:repeat(3,1fr)}
+      .hero{grid-template-columns:1fr 360px}
+    }
+    @media (max-width:800px){
+      .hero{grid-template-columns:1fr}
+      .hero-right{order:-1;margin-bottom:18px}
+      .catalog-grid{grid-template-columns:repeat(2,1fr)}
+      nav ul{display:none}
+    }
+    @media (max-width:420px){
+      .catalog-grid{grid-template-columns:1fr}
+      .hero-left h1{font-size:28px}
+      .logo{width:40px;height:40px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">TC</div>
+        <div>
+          <div style="font-weight:800">Trusted Company</div>
+          <div style="font-size:12px;color:var(--muted)">Premium clothing for the family</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#men">Men</a></li>
+          <li><a href="#women">Women</a></li>
+          <li><a href="#children">Children</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div style="display:flex;gap:12px;align-items:center">
+        <a class="cta" href="#men">Shop Now</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="home">
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Trusted Company — Clothes that feel like home</h1>
+        <p>Premium, comfortable and stylish clothing for Men, Women, and Children. Crafted with care and designed for everyday elegance.</p>
+        <div class="hero-actions">
+          <a class="cta" href="#men">Shop Men</a>
+          <a class="cta" style="background:#222;color:#fff" href="#women">Shop Women</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <img class="hero-img" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=3d6d1b9a0a3f78f9a1d8c6ec5f7f1b2a" alt="Family wearing stylish outfits">
+      </div>
+    </section>
+
+    <!-- Men -->
+    <section id="men">
+      <div class="section-head">
+        <h2>Men's Collection</h2>
+        <a href="#men" style="text-decoration:none;color:var(--muted)">View all</a>
+      </div>
+      <div class="catalog-grid">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1520975910775-8a9c8d8a3b03?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=9c1b8a55f8f6c1c2a2d6f3d4e5a6b7c8" alt="Men shirt">
+          <h3>Classic Linen Shirt</h3>
+          <div class="price">₹1,299</div>
+          <a class="shop" href="#" style="background:var(--accent);color:#fff">Shop Now</a>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=7d3a9b9b6a8c6d5e4f3a2b1c0d9e8f7g" alt="Men jacket">
+          <h3>Urban Bomber Jacket</h3>
+          <div class="price">₹2,499</div>
+          <a class="shop" href="#" style="background:#222;color:#fff">Shop Now</a>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=28a6baf3c8d4e5f6a7b8c9d0e1f2a3b4" alt="Men pants">
+          <h3>Comfort Chinos</h3>
+          <div class="price">₹1,099</div>
+          <a class="shop" href="#" style="background:var(--accent);color:#fff">Shop Now</a>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1541099649105-1f0f1a2b3c4d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcdef1234567890abcdef1234567890" alt="Men tee">
+          <h3>Signature Tee</h3>
+          <div class="price">₹699</div>
+          <a class="shop" href="#" style="background:#222;color:#fff">Shop Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Women -->
+    <section id="women">
+      <div class="section-head">
+        <h2>Women's Collection</h2>
+        <a href="#women" style="text-decoration:none;color:var(--muted)">View all</a>
+      </div>
+      <div class="catalog-grid">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1520975910775-8a9c8d8a3b05?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=1a2b3c4d5e6f7g8h9i0j" alt="Women dress">
+          <h3>Elegant Midi Dress</h3>
+          <div class="price">₹2,199</div>
+          <a class="shop" href="#" style="background:var(--accent);color:#fff">Shop Now</a>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=234567890abcdef123456" alt="Women kurta">
+          <h3>Comfort Kurta Set</h3>
+          <div class="price">₹1,499</div>
+          <a class="shop" href="#" style="background:#222;color:#fff">Shop Now</a>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1544986581-efac024faf62?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcdefabcdefabcdefabcdefabcdef" alt="Women top">
+          <h3>Silk Blouse</h3>
+          <div class="price">₹1,799</div>
+          <a class="shop" href="#" style="background:var(--accent);color:#fff">Shop Now</a>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1520975910775-8a9c8d8a3b07?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=99887766554433221100" alt="Women skirt">
+          <h3>Flowy Skirt</h3>
+          <div class="price">₹999</div>
+          <a class="shop" href="#" style="background:#222;color:#fff">Shop Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Children -->
+    <section id="children">
+      <div class="section-head">
+        <h2>Children's Collection</h2>
+        <a href="#children" style="text-decoration:none;color:var(--muted)">View all</a>
+      </div>
+      <div class="catalog-grid">
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e2?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=a1b2c3d4e5f6g7h8i9j0" alt="Child dress">
+          <h3>Playful Romper</h3>
+          <div class="price">₹699</div>
+          <a class="shop" href="#" style="background:var(--accent);color:#fff">Shop Now</a>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=123123123123123123" alt="Child tee">
+          <h3>Graphic Tee</h3>
+          <div class="price">₹399</div>
+          <a class="shop" href="#" style="background:#222;color:#fff">Shop Now</a>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1530775154084-52b2cf1c2b8f?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=abcdef9876543210" alt="Child jacket">
+          <h3>Cozy Jacket</h3>
+          <div class="price">₹899</div>
+          <a class="shop" href="#" style="background:var(--accent);color:#fff">Shop Now</a>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1511450103865-0a3b46d6a3a9?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=0a1b2c3d4e5f6a7b8c9d" alt="Child set">
+          <h3>Matching Set</h3>
+          <div class="price">₹799</div>
+          <a class="shop" href="#" style="background:#222;color:#fff">Shop Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About & Contact -->
+    <section id="about">
+      <div style="display:grid;grid-template-columns:1fr 360px;gap:18px;align-items:start">
+        <div>
+          <h2>About Trusted Company</h2>
+          <p style="color:var(--muted)">Trusted Company is a family-first clothing brand focused on premium fabrics, comfortable fits and timeless styles. We design collections for men, women and children with sustainability and quality in mind.</p>
+          <p style="color:var(--muted)">We believe in craftsmanship, fair pricing and delivering clothes that you can rely on for everyday life and special moments.</p>
+        </div>
+
+        <div id="contact" class="contact-card">
+          <h3>Contact Us</h3>
+          <form id="contactForm">
+            <label for="name">Name</label>
+            <input id="name" name="name" required />
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" required />
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+            <div id="formMessage" style="margin-top:10px;color:var(--muted);font-size:13px"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div style="display:flex;align-items:center;gap:12px">
+            <div class="logo" style="background:linear-gradient(135deg,var(--accent),var(--accent-dark))">TC</div>
+            <div>
+              <strong>Trusted Company</strong>
+              <div style="font-size:13px;color:#ccc">Premium family clothing</div>
+            </div>
+          </div>
+
+          <div class="footer-address" style="margin-top:18px">
+            <p>📍 Sai Snehdeep Hospital Sector 20, Kopar Khairane, Navi Mumbai, Maharashtra 400709, India</p>
+            <p>📞 [9642945882]</p>
+            <div class="socials">
+              <a href="#" title="Instagram">IG</a>
+              <a href="#" title="Facebook">FB</a>
+              <a href="#" title="WhatsApp">WA</a>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="color:#fff">Quick Links</h3>
+          <ul style="list-style:none;padding:0;margin:10px 0 0;color:#ddd">
+            <li><a href="#men" style="color:inherit;text-decoration:none">Men</a></li>
+            <li><a href="#women" style="color:inherit;text-decoration:none">Women</a></li>
+            <li><a href="#children" style="color:inherit;text-decoration:none">Children</a></li>
+            <li><a href="#contact" style="color:inherit;text-decoration:none">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="copyright">© 2025 Trusted Company. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    // Basic contact form handling (no backend) — just shows success message
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const msg = document.getElementById('message').value.trim();
+      const fm = document.getElementById('formMessage');
+      if(!name || !email || !msg){ fm.textContent = 'Please fill all fields.'; return; }
+      fm.style.color='green';
+      fm.textContent = 'Thanks, ' + name + '! Your message has been received (demo).';
+      // reset form
+      setTimeout(()=>{ document.getElementById('contactForm').reset(); fm.textContent=''; },2500);
+    });
+  </script>
+</body>
+</html>
